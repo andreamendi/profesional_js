@@ -21,8 +21,9 @@
         return this;
       };
 
-      // this en el scope de una función en strict mode
       console.log(`who Is This: ${whoIsThis()}`);
+
+      // this en el scope de una función en strict mode
       function whoIsThisStrict() {
           "use strict";
           return this;

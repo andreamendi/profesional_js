@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "description": "Proyecto del Curso Profesional de JavaScript 2 vez",
   "main": "index.js",
+  "license": "MIT",
+  "author": "Andrea Mendi <@andreamendi>",
   "scripts": {
     "start": "live-server"
   },
   "keywords": [
     "platzi"
   ],
-  "author": "Andrea Mendi <@andreamendi>",
-  "license": "MIT",
   "devDependencies": {
     "live-server": "^1.2.1"
   }

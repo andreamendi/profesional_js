@@ -29,14 +29,14 @@
       saludar.call(andrea)
 
       // Establece `this` usando `call` y pasar argumentos a la función
-      function caminar (metros, direccion) {
-        console.log(`${this.name} camina ${metros} hacía el ${direccion}.`);
+      function caminar (metros, direccion, ubicacion) {
+        console.log(`${this.name} camina ${metros} metros, hacia el ${direccion}. Y llega a ${ubicacion}`);
       }
 
       caminar.call(andrea, 25, 'norte');
 
       // Establece `this` usando `apply` y pasar argumentos a la función
-      const valores = [100, 'Sur'];
+      const valores = [100, 'Sur','Bubba Gump'];
       caminar.apply(andrea, valores);
       /*
       Trick
