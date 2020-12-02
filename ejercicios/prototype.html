@@ -9,33 +9,116 @@
 
     <script>
       // Un objeto común y corriente
-      const harry = {
-        name: 'Harry',
-      }
-      harry.saludar = function(){
-        console.log(`Hola, soy ${this.name}`)
-      }
-      harry.saludar();
+      // const harry = {
+      //   name: 'Harry',
+      // }
+      // harry.saludar = function(){
+      //   console.log(`Hola, soy ${this.name}`)
+      // }
+      // harry.saludar();
 
-      const ron = {
-        name: 'Ron',
-      }
-      ron.saludar = function(){
-        console.log(`Hola, soy ${this.name}`)
-      }
-      ron.saludar();
+      // const ron = {
+      //   name: 'Ron',
+      // }
+      // ron.saludar = function(){
+      //   console.log(`Hola, soy ${this.name}`)
+      // }
+      // ron.saludar();
 
 
 
       // Seamos un poco más eficientes
-      function Wizard (){
-        const wizard ={
-          name: name,
-        };
+      // function Wizard (name){
+      //   const wizard ={
+      //     name: name,
+      //   };
 
-        wizard.saludar = function(){
-        console.log(`Hola, soy ${this.name}`)
-        };
+      //   wizard.saludar = function(){
+      //   console.log(`Hola, soy ${this.name}`)
+      //   };
+
+      //   return wizard
+      // };
+
+      // const harry = Wizard("Harry");
+      // harry.saludar();
+
+      // const ron = Wizard('Ron');
+      // ron.saludar();
+
+      // const hermione = Wizard('Hermione');
+      // hermione.saludar();
+
+      
+
+      // Aun podemos mejorar más y evitar tener que crear la misma función cada vez
+
+      // const wizardMethods = {
+      //   saludar: function(){
+      //   console.log(`Por las barbas de Merlín, eres ${this.name}`)
+      //   },
+      // };
+
+      // function Wizard (name){
+      //   const wizard ={
+      //     name: name,
+      //   };
+
+      //   wizard.saludar = wizardMethods.saludar;
+
+      //   return wizard
+      // };
+
+      // const harry = Wizard("Harry");
+      // harry.saludar();
+
+      // const ron = Wizard('Ron');
+      // ron.saludar();
+
+      // const hermione = Wizard('Hermione');
+      // hermione.saludar();
+
+
+
+      // Object.create
+      // const nuevoObjeto = Object.create(objeto)
+
+
+      // const wizardMethods = {
+      //   saludar: function(){
+      //   console.log(`Soy Gryffindor. ${this.name}`)
+      //   },
+      // };
+
+      // function Wizard (name){
+      //   const wizard = Object.create(wizardMethods);
+      //   wizard.name = name;
+
+      //   return wizard
+      // };
+
+      // const harry = Wizard("Harry");
+      // harry.saludar();
+
+      // const ron = Wizard('Ron');
+      // ron.saludar();
+
+      // const hermione = Wizard('Hermione');
+      // hermione.saludar();
+
+
+      // Los métodos de wizard dentro de Wizard
+
+      // const wizardMethods = {
+      //   saludar: function(){
+      //   console.log(`Soy Gryffindor. ${this.name}`)
+      //   },
+      // }; 
+
+      
+      function Wizard (name){
+        const wizard = Object.create(wizardMethods);
+        wizard.name = name;
 
         return wizard
       };
@@ -46,66 +129,17 @@
       const ron = Wizard('Ron');
       ron.saludar();
 
-      // function Hero(name) {
-      //   const hero = {
-      //     name: name,
-      //   };
+      const hermione = Wizard('Hermione');
+      hermione.saludar();
 
-      //   hero.saludar = function() {
-      //     console.log(`Hola soy ${this.name}`);
-      //   };
 
-      //   return hero;
-      // }
-      // const zelda = Hero('Zelda');
-      // zelda.saludar();
 
-      // const link = Hero('Link');
-      // link.saludar();
 
-      // Aun podemos mejorar más y evitar tener que crear la misma función cada vez
-      // const heroMethods = {
-      //   saludar: function() {
-      //     console.log(`Me llamo ${this.name}`);
-      //   },
-      // };
 
-      // function Hero(name) {
-      //   const hero = {
-      //     name: name,
-      //   };
-      //   hero.saludar = heroMethods.saludar;
-      //   return hero;
-      // }
 
-      // const zelda = Hero('Zelda');
-      // zelda.saludar();
 
-      // const link = Hero('Link');
-      // link.saludar();
 
-      // Object.create
-      // const nuevoObjeto = Object.create(objeto)
-      // const heroMethods = {
-      //   saludar: function() {
-      //     console.log(`Soy superheroe! ${this.name}`);
-      //   },
-      // };
 
-      // function Hero(name) {
-      //   const hero = Object.create(heroMethods);
-      //   hero.name = name;
-
-      //   return hero;
-      // }
-
-      // const zelda = Hero('Zelda');
-      // zelda.saludar();
-
-      // const link = Hero('Link');
-      // link.saludar();
-
-      // Los métodos de hero dentro de Hero
       // const heroMethods = {
       //   saludar: function() {
       //     console.log(`Soy superheroe! ${this.name}`);

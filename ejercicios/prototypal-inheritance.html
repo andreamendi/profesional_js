@@ -20,20 +20,30 @@
     </h1>
 
     <script>
-      function Hero(name) {
+      function Wizard(name) {
         this.name = name;
       }
 
-      Hero.prototype.saludar = function() {
+      Wizard.prototype.saludar = function() {
         console.log(`Hola, soy ${this.name}.`);
       };
 
-      const zelda = new Hero('Zelda');
+      const harry = new Wizard('Harry');
 
       // propiedades de la instancia
+      console.log(`Name: ${harry.name}`);
+      
       // propiedades de la "clase"
+      console.log(`Saludar: ${harry.saludar}`);
+      
       // propiedades heredadas ej: toString
+      console.log(`toString: ${harry.toString}`);
+      
       // hasOwnProperty (de dónde sale toString o esto?)
+      console.log(`harry.hasOwnProperty("name"): ${harry.hasOwnProperty("saludar")}`);
+
+
+
       // inspeccionemos el prototipo del zelda
       // inspeccionemos el prototipo del Hero
       // inspeccionemos el prototipo del Object
