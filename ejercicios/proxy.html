@@ -8,6 +8,8 @@
     <p><em>Abre la consola</em></p>
 
     <script src="https://unpkg.com/fast-levenshtein@2.0.6/levenshtein.js"></script>
+    <!-- levenshtein Es un algoritmo que va a encontrar la distancia entre dos cadenas  -->
+
     <script>
       // Proxy es parecido a getters y setters
       // Usa un concepto que se llama traps: son interceptores de llamadas. A diferencia de getters, no opera sobre una propieda, si no sobre un objeto.
@@ -19,6 +21,29 @@
 
       // Para eso eso vamos a usar un algoritmo que se llama Levenshtein. (window.Levenshtein.get)
       // Ejemplos de levenshtein distance (usa window.Levenshtein)
+
+      const target = {
+        red: 'Rojo',
+        green: 'Verde',
+        blue: 'Azul'
+      }
+
+      const handler = {
+        get(obj,prop ) {
+          if(prop in obj) {
+            return obj[prop]
+          }
+          const suggestion = Object.keys(obj).find(key => {
+            return Levenshtein.get(key, prop) <= 3;
+          });
+          if(suggestion){
+            console.log(`Sorry!, "${prop}" no lo encontramos. Creemos que querías decir: ${suggestion}`)
+          }
+          return obj[prop];
+        }
+      }
+
+      const p = new Proxy(target, handler);
     </script>
   </body>
 </html>
