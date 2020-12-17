@@ -13,3 +13,21 @@ class Singleton {
 }
 
 export default Singleton;
+
+
+
+// La estructura de un SINGLETON "natural".
+// class Ads {
+//   private static instance: Ads;
+
+//   private constructor() {}
+
+//   static getInstance() {
+
+//     if(!Ads.instance) {
+//       Ads.instance = new Ads();
+//     }
+
+//     return Ads.instance;
+//   }
+// }
