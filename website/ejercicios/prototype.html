@@ -1,0 +1,184 @@
+<html>
+  <head>
+    <title>Prototype</title>
+  </head>
+
+  <body>
+    <a href="/ejercicios/">Go back</a>
+    <p><em>Abre la consola</em></p>
+
+    <script>
+      // Un objeto común y corriente
+      // const harry = {
+      //   name: 'Harry',
+      // }
+      // harry.saludar = function(){
+      //   console.log(`Hola, soy ${this.name}`)
+      // }
+      // harry.saludar();
+
+      // const ron = {
+      //   name: 'Ron',
+      // }
+      // ron.saludar = function(){
+      //   console.log(`Hola, soy ${this.name}`)
+      // }
+      // ron.saludar();
+
+
+
+      // Seamos un poco más eficientes
+      // function Wizard (name){
+      //   const wizard ={
+      //     name: name,
+      //   };
+
+      //   wizard.saludar = function(){
+      //   console.log(`Hola, soy ${this.name}`)
+      //   };
+
+      //   return wizard
+      // };
+
+      // const harry = Wizard("Harry");
+      // harry.saludar();
+
+      // const ron = Wizard('Ron');
+      // ron.saludar();
+
+      // const hermione = Wizard('Hermione');
+      // hermione.saludar();
+
+      
+
+      // Aun podemos mejorar más y evitar tener que crear la misma función cada vez
+
+      // const wizardMethods = {
+      //   saludar: function(){
+      //   console.log(`Por las barbas de Merlín, eres ${this.name}`)
+      //   },
+      // };
+
+      // function Wizard (name){
+      //   const wizard ={
+      //     name: name,
+      //   };
+
+      //   wizard.saludar = wizardMethods.saludar;
+
+      //   return wizard
+      // };
+
+      // const harry = Wizard("Harry");
+      // harry.saludar();
+
+      // const ron = Wizard('Ron');
+      // ron.saludar();
+
+      // const hermione = Wizard('Hermione');
+      // hermione.saludar();
+
+
+
+      // Object.create
+      // const nuevoObjeto = Object.create(objeto)
+
+
+      // const wizardMethods = {
+      //   saludar: function(){
+      //   console.log(`Soy Gryffindor. ${this.name}`)
+      //   },
+      // };
+
+      // function Wizard (name){
+      //   const wizard = Object.create(wizardMethods);
+      //   wizard.name = name;
+
+      //   return wizard
+      // };
+
+      // const harry = Wizard("Harry");
+      // harry.saludar();
+
+      // const ron = Wizard('Ron');
+      // ron.saludar();
+
+      // const hermione = Wizard('Hermione');
+      // hermione.saludar();
+
+
+      // Los métodos de wizard dentro de Wizard
+
+      // const wizardMethods = {
+      //   saludar: function(){
+      //   console.log(`Soy Gryffindor. ${this.name}`)
+      //   },
+      // }; 
+
+      
+      function Wizard (name){
+        const wizard = Object.create(wizardMethods);
+        wizard.name = name;
+
+        return wizard
+      };
+
+      const harry = Wizard("Harry");
+      harry.saludar();
+
+      const ron = Wizard('Ron');
+      ron.saludar();
+
+      const hermione = Wizard('Hermione');
+      hermione.saludar();
+
+
+
+
+
+
+
+
+
+      // const heroMethods = {
+      //   saludar: function() {
+      //     console.log(`Soy superheroe! ${this.name}`);
+      //   },
+      // };
+
+      // function Hero(name) {
+      //   const hero = Object.create(Hero.prototype);
+      //   hero.name = name;
+
+      //   return hero;
+      // }
+
+      // Hero.prototype.saludar = function() {
+      //   console.log(`Soy superheroina! ${this.name}`);
+      // };
+
+      // const zelda = Hero('Zelda');
+      // zelda.saludar();
+
+      // const link = Hero('Link');
+      // link.saludar();
+
+      // new es un atajo (azucar sintactica) para llevar Hero.prototype al objeto que estamos creando
+      // function Hero(name) {
+      //   // this = Object.create(Hero.prototype);
+      //   this.name = name;
+      //   // return this;
+      // }
+
+      // Hero.prototype.saludar = function() {
+      //   console.log(`New: ${this.name}`);
+      // };
+
+      // const zelda = new Hero('Zelda');
+      // zelda.saludar();
+
+      // const link = new Hero('Link');
+      // link.saludar();
+    </script>
+  </body>
+</html>

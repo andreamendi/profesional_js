@@ -1,0 +1,24 @@
+{
+  "name": "platzi-media-player",
+  "version": "1.0.0",
+  "description": "Proyecto del Curso Profesional de JavaScript 2 vez",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Andrea Mendi <@andreamendi>",
+  "scripts": {
+    "start": "parcel index.html ejercicios/index.html ejercicios/**/*.html"
+  },
+  "keywords": [
+    "platzi"
+  ],
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^4.1.2"
+  },
+  "browserslist": [
+    "last 1 chrome version"
+  ],
+  "dependencies": {
+    "@andreamendi/platzimediaplayer": "^1.0.0"
+  }
+}
